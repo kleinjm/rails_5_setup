@@ -4,12 +4,12 @@
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}
     %meta{ name: 'viewport', content: 'width=device-width, initial-scale=1, shrink-to-fit=no' }
     %meta{ 'http-equiv' => 'x-ua-compatible', content: 'ie=edge' }
-    %title Dashboard
+    %title App Name
     = csrf_meta_tags
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   %body
     .container
       %p.notice= notice
-      %p.alert.alert-warning= alert
+      %p{ class: ('alert alert-warning' if alert) }= alert
       = yield
